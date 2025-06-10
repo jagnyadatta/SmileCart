@@ -25,6 +25,7 @@ const Carousel = ({ imageUrls, title }) => {
     timerRef.current = setInterval(handleNext, 3000);
 
     return () => clearInterval(timerRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -54,7 +55,7 @@ const Carousel = ({ imageUrls, title }) => {
           }}
         />
       </div>
-      <div className="flex space-x-1">
+      <div className="mt-2 flex space-x-1">
         {imageUrls.map((_, index) => (
           <span
             key={index}
