@@ -1,7 +1,7 @@
-import { Button } from "neetoui";
+import Product from "components/Product";
 
 import "./App.css";
 
-const App = () => <Button label="Click me" style="secondary" />;
+const App = () => <Product />;
 
 export default App;
