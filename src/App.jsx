@@ -1,9 +1,9 @@
-import Home from "components/Home";
 import Product from "components/Product";
-import { Route, Switch, NavLink } from "react-router-dom";
+import ProductList from "components/ProductList";
+import { Route, Switch, NavLink, Redirect } from "react-router-dom";
 
 import "./App.css";
-import PageNotFound from "./components/PageNotFound";
+import PageNotFound from "./components/commons/PageNotFound";
 
 const App = () => (
   <>
@@ -16,8 +16,9 @@ const App = () => (
       </NavLink>
     </div>
     <Switch>
-      <Route exact component={Product} path="/product" />
-      <Route exact component={Home} path="/" />
+      <Route exact component={ProductList} path="/products" />
+      <Route exact component={Product} path="/products/:slug" />
+      <Redirect exact from="/" to="/products" />
       <Route component={PageNotFound} path="*" />
     </Switch>
   </>
